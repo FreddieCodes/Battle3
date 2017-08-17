@@ -14,7 +14,7 @@ end
 feature "View hit points" do
   it "see Player 2's hit points" do
     sign_in_and_play
-    expect(page).to have_content "Freddie: 60HP"
+    expect(page).to have_content "Freddie: 100HP"
   end
 end
 
@@ -28,4 +28,17 @@ feature 'attacking' do
     click_button('attack')
     expect(page).to have_content "Jenny attacks Freddie"
   end
+  it 'displays attack confirmation page' do
+    sign_in_and_play
+    click_button('attack')
+    expect(page).to have_content "Freddie: 90HP"
+  end
 end
+
+# feature 'hit points' do
+#   it 'clicks button' do
+#   sign_in_and_play
+#   click_button('attack')
+#   expect()
+# end
+# end
