@@ -2,7 +2,7 @@ feature "testing forms" do
 
   it "has a form on the homepage" do
     visit '/'
-    expect(page). to have_field("name_1")
+    expect(page). to have_field("player_1")
   end
 
   it "displays the names entered in the form in /names" do
