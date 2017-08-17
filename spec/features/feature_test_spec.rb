@@ -17,3 +17,15 @@ feature "View hit points" do
     expect(page).to have_content "Freddie: 60HP"
   end
 end
+
+feature 'attacking' do
+  it 'player1 can attack player 2' do
+    sign_in_and_play
+    expect(page).to have_button('attack')
+  end
+  it 'displays attack confirmation page' do
+    sign_in_and_play
+    click_button('attack')
+    expect(page).to have_content "Jenny attacks Freddie"
+  end
+end
