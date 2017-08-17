@@ -6,10 +6,14 @@ feature "testing forms" do
   end
 
   it "displays the names entered in the form in /names" do
-       visit '/'
-    fill_in "name_1", :with => "Jenny"
-    fill_in "name_2", :with => "Freddie"
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content("Jenny vs Freddie")
+  end
+end
+
+feature "View hit points" do
+  it "see Player 2's hit points" do
+    sign_in_and_play
+    expect(page).to have_content "Freddie: 60HP"
   end
 end

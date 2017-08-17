@@ -11,7 +11,6 @@ class Battle < Sinatra::Base
   post '/names' do
     @name_1 = params[:name_1]
     @name_2 = params[:name_2]
-    erb(:play)
     session[:name_1] = params[:name_1]
     session[:name_2] = params[:name_2]
     redirect "/play"
