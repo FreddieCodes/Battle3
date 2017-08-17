@@ -10,9 +10,4 @@ class Player
     @hit_points -= 10
   end
 
-  def attack(player)
-    player.reduce_hp
-  end
 end
-
-# name_1 = Player.new(Freddie)
